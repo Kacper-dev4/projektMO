@@ -1,5 +1,7 @@
 clear all 
 
+% Nelder Mead metoda algorytm 
+tic
 % Początkowe punkty w simplexie
 x = [1,1,1;
      1,3,1;
@@ -16,7 +18,7 @@ end
 
 %% Tutaj zaczyna się pętla programu 
 
-for j=1:5
+for j=1:15
 
 niepowodzenie = 0;
 % Odbicie 
@@ -72,7 +74,7 @@ end
 [xsort, Jsort] = sortuj(xsort,Jsort);
 
 end
-
+toc
 % figure
 % plot3(x(:,1), x(:,2), x(:,3), 'o');
 % hold on
