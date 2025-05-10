@@ -9,7 +9,7 @@ x = [1,1,1;
      1,2,3];
 
 J = zeros(1,4);
-
+eps = 0.0001;
 for i=1:4
     J(i) = symulacja(x(i,:)); 
 end
@@ -72,6 +72,10 @@ if Jsort(3) < Jodbicie && niepowodzenie
    end
 end
 [xsort, Jsort] = sortuj(xsort,Jsort);
+
+if std(Jsort) < eps
+    break;
+end
 
 end
 toc
