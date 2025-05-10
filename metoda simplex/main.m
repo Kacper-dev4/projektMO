@@ -1,5 +1,7 @@
 clear all 
 
+% Nelder Mead metoda algorytm 
+tic
 % Początkowe punkty w simplexie
 x = [1,1,1;
      1,3,1;
@@ -7,12 +9,16 @@ x = [1,1,1;
      1,2,3];
 
 J = zeros(1,4);
-
+eps = 0.0001;
 for i=1:4
     J(i) = symulacja(x(i,:)); 
 end
 
 [xsort, Jsort] = sortuj(x,J);
+
+%% Tutaj zaczyna się pętla programu 
+
+for j=1:30
 
 niepowodzenie = 0;
 % Odbicie 
@@ -65,17 +71,23 @@ if Jsort(3) < Jodbicie && niepowodzenie
        Jsort(i) = symulacja(xsort(i,:));
    end
 end
-{}
+[xsort, Jsort] = sortuj(xsort,Jsort);
 
-figure
-plot3(x(:,1), x(:,2), x(:,3), 'o');
-hold on
-plot3(centroid(1,1), centroid(1,2), centroid(1,3),'x');
-plot3(odbicie(1,1), odbicie(1,2), odbicie(1,3),'*');
-xlim([0 3]);
-%ylim([0 4]);
-%zlim([0 6]);
-grid on
+if std(Jsort) < eps
+    break;
+end
+
+end
+toc
+% figure
+% plot3(x(:,1), x(:,2), x(:,3), 'o');
+% hold on
+% plot3(centroid(1,1), centroid(1,2), centroid(1,3),'x');
+% plot3(odbicie(1,1), odbicie(1,2), odbicie(1,3),'*');
+% xlim([0 3]);
+% %ylim([0 4]);
+% %zlim([0 6]);
+% grid on
 
 
 

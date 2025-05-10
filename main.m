@@ -3,11 +3,14 @@ clear all
 % Nelder Mead metoda algorytm 
 tic
 % Początkowe punkty w simplexie
-x = [1,1,1;
-     1,3,1;
-     2,1,5;
-     1,2,3];
-
+%x = [1,1,1;
+ %    1,3,1;
+  %   2,1,5;
+   %  1,2,3];
+x = [10,1,1;
+     1,15,1;
+     7,1,5;
+     1,4,3];
 J = zeros(1,4);
 eps = 0.0001;
 for i=1:4
@@ -18,7 +21,7 @@ end
 
 %% Tutaj zaczyna się pętla programu 
 
-for j=1:15
+for j=1:30
 
 niepowodzenie = 0;
 % Odbicie 
