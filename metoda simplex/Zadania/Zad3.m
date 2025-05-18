@@ -86,15 +86,6 @@ end
 
 end
 toc
-% figure
-% plot3(x(:,1), x(:,2), x(:,3), 'o');
-% hold on
-% plot3(centroid(1,1), centroid(1,2), centroid(1,3),'x');
-% plot3(odbicie(1,1), odbicie(1,2), odbicie(1,3),'*');
-% xlim([0 3]);
-% %ylim([0 4]);
-% %zlim([0 6]);
-% grid on
 
 
 

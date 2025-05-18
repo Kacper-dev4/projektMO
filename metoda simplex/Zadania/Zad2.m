@@ -3,14 +3,18 @@ clear all
 % Nelder Mead metoda algorytm 
 tic
 % Początkowe punkty w simplexie%
-%x = [1,1,1;
- %    1,3,1;
-  %   2,1,5;
-   %  1,2,3];
-x = [3,1,6;
-     2,1,2;
-     7,6,5;
-     11,4,5];
+x = [1,1,1;
+    1,3,1;
+     2,1,5;
+     1,2,3];
+%x = [3,1,6;
+ %    2,1,2;
+  %   7,6,5;
+   %  11,4,5];
+%x = [0.001, 0.001, 0.001;
+ %    1 ,0.001, 0.001;
+  %   0.001,1,0.001;
+   %   0.001,0.001,1];
 J = zeros(1,4);
 eps = 0.0001;
 for i=1:4
@@ -86,15 +90,7 @@ end
 
 end
 toc
-% figure
-% plot3(x(:,1), x(:,2), x(:,3), 'o');
-% hold on
-% plot3(centroid(1,1), centroid(1,2), centroid(1,3),'x');
-% plot3(odbicie(1,1), odbicie(1,2), odbicie(1,3),'*');
-% xlim([0 3]);
-% %ylim([0 4]);
-% %zlim([0 6]);
-% grid on
+
 
 
 
