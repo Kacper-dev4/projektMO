@@ -75,12 +75,19 @@ if Jsort(3) < Jodbicie && niepowodzenie
    end
 end
 [xsort, Jsort] = sortuj(xsort,Jsort);
+Jnajlepszy(j) = Jsort(1);
 
 if std(Jsort) < eps
     break;
 end
 
 end
+
+figure
+plot(Jnajlepszy,'x','LineStyle','--')
+xlabel('Iteracje')
+ylabel('Najlepsza wartość wskaźnika jakości w iteracji')
+
 toc
 
 

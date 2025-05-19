@@ -3,14 +3,14 @@ clear all
 % Nelder Mead metoda algorytm 
 tic
 % Początkowe punkty w simplexie
-x = [1,1,1;
-     1,3,1;
-     2,1,5;
-     1,2,3];
-%x = [3,10,6;
- %    1,1,1;
-  %   7,3,5;
-   %  6,4,3];
+% x = [1,1,1;
+%      1,3,1;
+%      2,1,5;
+%      1,2,3];
+x = [3,10,6;
+    1,1,1;
+    7,3,5;
+    6,4,3];
 J = zeros(1,4);
 eps = 0.0001;
 for i=1:4
@@ -79,13 +79,19 @@ if Jsort(3) < Jodbicie && niepowodzenie
    end
 end
 [xsort, Jsort] = sortuj(xsort,Jsort);
-
+Jnajlepsze(j) = Jsort(1);
 if std(Jsort) < eps
     break;
 end
 
+
+
 end
 toc
 
+figure
+plot(Jnajlepsze,'x','LineStyle','--')
+xlabel('Iteracje')
+ylabel('Najlepsza wartość wskaźnika jakości w iteracji')
 
 
